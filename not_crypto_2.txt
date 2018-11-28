@@ -1,0 +1,21 @@
+Attempts to pickle unpicklable objects will raise the PicklingError exception; when this happens, an unspecified number of bytes may have already been written to the underlying file. Trying to pickle a highly recursive data structure may exceed the maximum recursion depth, a RecursionError will be raised in this case. You can carefully raise this limit with sys.setrecursionlimit().
+
+Note that functions (built-in and user-defined) are pickled by “fully qualified” name reference, not by value. [2] This means that only the function name is pickled, along with the name of the module the function is defined in. Neither the function’s code, nor any of its function attributes are pickled. Thus the defining module must be importable in the unpickling environment, and the module must contain the named object, otherwise an exception will be raised. [3]
+
+Similarly, classes are pickled by named reference, so the same restrictions in the unpickling environment apply. Note that none of the class’s code or data is pickled, so in the following example the class attribute attr is not restored in the unpickling environment:
+These restrictions are why picklable functions and classes must be defined in the top level of a module.
+
+Similarly, when class instances are pickled, their class’s code and data are not pickled along with them. Only the instance data are pickled. This is done on purpose, so you can fix bugs in a class or add methods to the class and still load objects that were created with an earlier version of the class. If you plan to have long-lived objects that will see many versions of a class, it may be worthwhile to put a version number in the objects so that suitable conversions can be made by the class’s __setstate__() method.
+The interface is currently defined as follows. The __reduce__() method takes no argument and shall return either a string or preferably a tuple (the returned object is often referred to as the “reduce value”).
+
+If a string is returned, the string should be interpreted as the name of a global variable. It should be the object’s local name relative to its module; the pickle module searches the module namespace to determine the object’s module. This behaviour is typically useful for singletons.
+
+When a tuple is returned, it must be between two and five items long. Optional items can either be omitted, or None can be provided as their value. The semantics of each item are in order:
+
+A callable object that will be called to create the initial version of the object.
+A tuple of arguments for the callable object. An empty tuple must be given if the callable does not accept any argument.
+Optionally, the object’s state, which will be passed to the object’s __setstate__() method as previously described. If the object has no such method then, the value must be a dictionary and it will be added to the object’s __dict__ attribute.
+Optionally, an iterator (and not a sequence) yielding successive items. These items will be appended to the object either using obj.append(item) or, in batch, using obj.extend(list_of_items). This is primarily used for list subclasses, but may be used by other classes as long as they have append() and extend() methods with the appropriate signature. (Whether append() or extend() is used depends on which pickle protocol version is used as well as the number of items to append, so both must be supported.)
+Optionally, an iterator (not a sequence) yielding successive key-value pairs. These items will be stored to the object using obj[key] = value. This is primarily used for dictionary subclasses, but may be used by other classes as long as they implement __setitem__().
+object.__reduce_ex__(protocol)
+Alternatively, a __reduce_ex__() method may be defined. The only difference is this method should take a single integer argument, the protocol version. When defined, pickle will prefer it over the __reduce__() method. In addition, __reduce__() automatically becomes a synonym for the extended version. The main use for this method is to provide backwards-compatible reduce values for older Python releases.

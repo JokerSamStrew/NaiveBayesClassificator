@@ -1,0 +1,43 @@
+Software licensed under open source licenses (OSS) is fundamental to the success of blockchain projects. Such licenses permit collaborative, decentralized development, encourage swift adoption by users and enable the community to "fork" the project to resolve strategic disputes.
+
+In fact, OSS licenses are used by both of the two major public blockchains, ethereum and bitcoin, as well as many other major blockchain projects, including the HyperLedger programs and R3's Corda.
+
+However, OSS licenses are generally quite different from traditional proprietary software licenses. The importance of selecting the right OSS license and complying with the terms of that license is rarely discussed by the blockchain community.
+
+If blockchain projects seek adoption by enterprises, the OSS license for the project will have a material impact on the rate of adoption. Even for established projects like ethereum, potential enterprise users carefully consider the OSS licenses that may be used.
+
+For example, Jerry Cuomo of IBM recently noted on Frederick Munawa's Blockchain Innovation podcast that the complexity of the OSS licenses for ethereum was one of the reasons IBM decided to shift from ethereum to its own blockchain project, which eventually became part of the HyperLedger project.
+
+Prospective enterprise users of a blockchain project will decide which blockchain project to adopt by applying the same criteria that they use for adopting other OSS licensed projects: (1) the complexity of the OSS project license or licenses; (2) the potential difficulty of complying with the obligations of such OSS license; and (3) the potential challenges of integrating a blockchain project with other software projects.
+
+OSS licenses vary dramatically in their terms. The Open Source Initiative (OSI) has approved 83 licenses as "open source."
+
+However, the full complexity of OSS licensing is suggested by the SPDX project, managed by the Linux Foundation, which has identified 345 "major" licenses; Black Duck Software lists 2,500 versions of OSS type licenses in its Knowledge Base, which covers more than 530 billion lines of OSS code from over 9,000 forges and repositories of open source projects. Black Duck notes that 94 percent of OSS projects are licensed under the top 10 OSS licenses.
+
+The two major types of OSS licenses are "copyleft" and "permissive." Ethereum is primarily licensed under two copyleft licenses: the Lesser General Public License version 3 (LGPLv3) and the General Public License version 3 (GPLv3). On the other hand, Bitcoin Core is licensed under the MIT license, the most popular permissive license.
+
+Copyleft licenses
+
+Copyleft licenses impose the most restrictive terms on the use of the OSS. The best-known example of a copyleft license is the General Public License version 2 (GPLv2), which is used for Linux operating system program.
+
+According to Black Duck Knowledge Base, the GPLv2 is the second most popular license, adopted by 14 percent of OSS projects. The GPLv3 used by Ethereum is the updated version of the GPLv2, published in 2007. The most fundamental characteristic of a copyleft license is its "reciprocal" provision: the legal requirement that both the original OSS and all "derivative works" of the original OSS be distributed solely under the terms of the copyleft license. "Derivative work" is a technical term under U.S. copyright law, describing work based on one or more preexisting works that represent an original work of authorship.
+
+Copyright law was originally designed to protect books, songs and films, but also protects software. One example is the series Game of Thrones which is a derivative work based on the novel series of the same name. Although derivative work generally means a modification of the software, a derivative work may be created in other ways: for example, two programs that are compiled together are frequently considered a derivative work.
+
+However, the application of copyright law to software continues to be uncertain. Consequently, the integration of copyleft licensed projects with projects licensed under other OSS licenses or proprietary licenses involves a complex legal analysis.
+
+Compliance with copyleft license is significantly more challenging than compliance with permissive licenses: copyleft licenses have more complex obligations, and the lack of clarity of copyright law as applied to software creates other problems. The OSS community that supports copyleft licenses is very concerned about misuse of OSS by proprietary vendors.
+
+This community is quite aggressive in seeking compliance with such licenses from users. Virtually all of the litigation concerning OSS licenses has been brought over enforcement of copyleft licenses.
+
+Permissive licenses
+
+"Permissive" licenses impose very few terms on the use of the OSS, generally only requiring a user to include notices and a copy of the license. Unlike copyleft licenses, they do not include "reciprocal" obligations.
+
+The OSS community that supports permissive licenses generally believes that permissive licenses encourage more rapid adoption of an OSS project and that the "reciprocal" terms of copyleft licenses are not necessary for the successful development of a blockchain project.
+
+The best-known example of a permissive license is the MIT license used by bitcoin. According to Black Duck Knowledge Base, 38 percent of OSS projects have adopted the MIT license, making it the most popular OSS license.
+
+Most blockchain projects have not historically focused on the importance of an OSS license choice. However, carefully considering the choice of license and taking the time to understand the differences in compliance requirements and approach to enforcement should allow projects to reap long-term benefits.
+
+Not only will the license choice affect the willingness of enterprises to adopt the project but the chosen license will also dictate the compliance philosophy and community culture of the project.
